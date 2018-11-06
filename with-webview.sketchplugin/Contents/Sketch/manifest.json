@@ -1,0 +1,24 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Symbols",
+      "identifier": "symbols-identifier",
+      "script": "symbols.js"
+    }
+  ],
+  "menu": {
+    "title": "STRV Symbols",
+    "items": [
+      "symbols-identifier"
+    ]
+  },
+  "version": "0.1.0",
+  "name": "STRV Symbols",
+  "identifier": "STRV Symbols",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
+  "author": "PrimeStark",
+  "authorEmail": "muqmuq@me.com"
+}

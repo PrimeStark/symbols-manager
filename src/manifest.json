@@ -1,0 +1,15 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Symbols",
+      "identifier": "symbols-identifier",
+      "script": "./symbols.js"
+    }
+  ],
+  "menu": {
+    "title": "STRV Symbols",
+    "items": ["symbols-identifier"]
+  }
+}
