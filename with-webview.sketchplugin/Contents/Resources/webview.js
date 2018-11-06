@@ -94,7 +94,7 @@
 /***/ (function(module, exports) {
 
 // Disable the context menu to have a more native feel
-document.addEventListener("contextmenu", function (e) {
+document.addEventListener('contextmenu', function (e) {
   e.preventDefault();
 });
 document.getElementById('button').addEventListener('click', function () {
@@ -102,7 +102,16 @@ document.getElementById('button').addEventListener('click', function () {
 }); // called from the plugin
 
 window.setRandomNumber = function (randomNumber) {
-  document.getElementById('answer').innerHTML = 'Random number from the plugin: ' + randomNumber;
+  document.getElementById('answer').innerHTML = "Random number from the plugin: ".concat(randomNumber);
+}; // My
+
+
+document.getElementById('button-symbols').addEventListener('click', function () {
+  window.postMessage('symbolsLog', 'Got Symbols');
+});
+
+window.getSymbols = function () {
+  document.getElementById('answer-symbols').innerHTML = 'Symbols called';
 };
 
 /***/ })

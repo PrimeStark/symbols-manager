@@ -2250,7 +2250,7 @@ module.exports = function buildAPI(browserWindow, panel, webview) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/055e60f339ea721ca4157f973930a594.html").path();
+module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/4f1775cbb3c4847bcb9418ee02bda79e.html").path();
 
 /***/ }),
 
@@ -2269,7 +2269,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui");
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
+var sketch = __webpack_require__(/*! sketch */ "sketch");
+
+/* harmony default export */ __webpack_exports__["default"] = (function (context) {
   var options = {
     identifier: 'unique.id',
     width: 240,
@@ -2285,11 +2287,34 @@ var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui");
 
   webContents.on('did-finish-load', function () {
     UI.message('UI loaded!');
-  }); // add a handler for a call from web content's javascript
+  });
+  var document = sketch.fromNative(context.document);
+  var pages = document.pages;
+  var symbolsPage = pages.find(function (p) {
+    return p.name === 'Symbols';
+  });
+
+  var getSymbolsInfo = function getSymbolsInfo(page) {
+    if (!page) {
+      console.log('No symbols page found');
+      log('No symbols page found');
+    }
+
+    page.layers.map(function (l) {
+      console.log("Symbol name is: ".concat(l.name, " with id ").concat(l.symbolId));
+      log("Symbol name is: ".concat(l.name, " with id ").concat(l.symbolId));
+    });
+  }; // add a handler for a call from web content's javascript
+
 
   webContents.on('nativeLog', function (s) {
     UI.message(s);
     webContents.executeJavaScript("setRandomNumber(".concat(Math.random(), ")")).catch(console.error);
+  });
+  webContents.on('symbolsLog', function (s) {
+    UI.message(s);
+    getSymbolsInfo(symbolsPage);
+    webContents.executeJavaScript("getSymbols()").catch(console.error);
   });
   browserWindow.loadURL(__webpack_require__(/*! ../resources/webview.html */ "./resources/webview.html"));
 });
@@ -2304,6 +2329,17 @@ var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui");
 /***/ (function(module, exports) {
 
 module.exports = require("events");
+
+/***/ }),
+
+/***/ "sketch":
+/*!*************************!*\
+  !*** external "sketch" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("sketch");
 
 /***/ }),
 
