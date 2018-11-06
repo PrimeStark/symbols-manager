@@ -5,7 +5,8 @@
     {
       "name": "Symbols",
       "identifier": "symbols-identifier",
-      "script": "symbols.js"
+      "script": "symbols.js",
+      "shortcut": "ctrl alt q"
     }
   ],
   "menu": {
