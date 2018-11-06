@@ -2263,22 +2263,20 @@ module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resour
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch-module-web-view */ "./node_modules/sketch-module-web-view/lib/index.js");
-/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui");
+var BrowserWindow = __webpack_require__(/*! sketch-module-web-view */ "./node_modules/sketch-module-web-view/lib/index.js");
 
 var sketch = __webpack_require__(/*! sketch */ "sketch");
+
+var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui");
 
 /* harmony default export */ __webpack_exports__["default"] = (function (context) {
   var options = {
     identifier: 'unique.id',
-    width: 240,
-    height: 180,
+    width: 640,
+    height: 480,
     show: false
   };
-  var browserWindow = new sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0___default.a(options); // only show the window when the page has loaded
+  var browserWindow = new BrowserWindow(options); // only show the window when the page has loaded
 
   browserWindow.once('ready-to-show', function () {
     browserWindow.show();

@@ -1,13 +1,12 @@
-import BrowserWindow from 'sketch-module-web-view'
-
-const UI = require('sketch/ui')
+const BrowserWindow = require('sketch-module-web-view')
 const sketch = require('sketch')
+const UI = require('sketch/ui')
 
 export default function(context) {
   const options = {
     identifier: 'unique.id',
-    width: 240,
-    height: 180,
+    width: 640,
+    height: 480,
     show: false,
   }
 
