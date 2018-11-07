@@ -1,6 +1,6 @@
 const BrowserWindow = require('sketch-module-web-view')
-const sketch = require('sketch')
-const UI = require('sketch/ui')
+const sketch = require('sketch') // eslint-disable-line
+const UI = require('sketch/ui') // eslint-disable-line
 
 export default function(context) {
   const options = {
@@ -10,14 +10,14 @@ export default function(context) {
     show: false,
   }
 
-  var browserWindow = new BrowserWindow(options)
+  const browserWindow = new BrowserWindow(options)
 
   // only show the window when the page has loaded
   browserWindow.once('ready-to-show', () => {
     browserWindow.show()
   })
 
-  const webContents = browserWindow.webContents
+  const { webContents } = browserWindow
 
   // print a message when the page loads
   webContents.on('did-finish-load', () => {
@@ -25,7 +25,7 @@ export default function(context) {
   })
 
   const document = sketch.fromNative(context.document)
-  const pages = document.pages
+  const { pages } = document
   const symbolsPage = pages.find(p => p.name === 'Symbols')
 
   const getSymbolsInfo = page => {
@@ -37,16 +37,17 @@ export default function(context) {
     page.layers.map(l => {
       console.log(`Symbol name is: ${l.name} with id ${l.symbolId}`)
       log(`Symbol name is: ${l.name} with id ${l.symbolId}`)
+      return l
     })
   }
 
   // add a handler for a call from web content's javascript
-  webContents.on('nativeLog', s => {
-    UI.message(s)
-    webContents
-      .executeJavaScript(`setRandomNumber(${Math.random()})`)
-      .catch(console.error)
-  })
+  // webContents.on('nativeLog', s => {
+  //   UI.message(s)
+  //   webContents
+  //     .executeJavaScript(`setRandomNumber(${Math.random()})`)
+  //     .catch(console.error)
+  // })
 
   webContents.on('symbolsLog', s => {
     UI.message(s)
@@ -54,5 +55,5 @@ export default function(context) {
     webContents.executeJavaScript(`getSymbols()`).catch(console.error)
   })
 
-  browserWindow.loadURL(require('../resources/webview.html'))
+  browserWindow.loadURL(require('../resources/webview.html')) // eslint-disable-line
 }

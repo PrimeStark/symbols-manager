@@ -14,10 +14,7 @@ html {
 /* Some general styling for dev purposes */
 /* TODO: remove when doing some real styling */
 body {
-  margin: 16px;
-}
-button {
-  margin: 16px 0 16px 0;
+  margin: 16rem;
 }
 
 *,

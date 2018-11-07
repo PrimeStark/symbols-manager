@@ -91,27 +91,22 @@
   !*** ./resources/webview.js ***!
   \******************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 // Disable the context menu to have a more native feel
 document.addEventListener('contextmenu', function (e) {
   e.preventDefault();
-});
-document.getElementById('button').addEventListener('click', function () {
-  window.postMessage('nativeLog', 'Called from the webview');
 }); // called from the plugin
-
-window.setRandomNumber = function (randomNumber) {
-  document.getElementById('answer').innerHTML = "Random number from the plugin: ".concat(randomNumber);
-}; // My
-
 
 document.getElementById('button-symbols').addEventListener('click', function () {
   window.postMessage('symbolsLog', 'Got Symbols');
 });
 
 window.getSymbols = function () {
-  document.getElementById('answer-symbols').innerHTML = 'Symbols called';
+  document.getElementById('answer-symbols').innerHTML = 'Symbols called. Check dev tools console.';
 };
 
 /***/ })

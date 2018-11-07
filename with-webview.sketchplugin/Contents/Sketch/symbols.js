@@ -2250,7 +2250,7 @@ module.exports = function buildAPI(browserWindow, panel, webview) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/4f1775cbb3c4847bcb9418ee02bda79e.html").path();
+module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/ac9c98bfbaea4ed8263568b1e53a1f2d.html").path();
 
 /***/ }),
 
@@ -2265,9 +2265,11 @@ module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resour
 __webpack_require__.r(__webpack_exports__);
 var BrowserWindow = __webpack_require__(/*! sketch-module-web-view */ "./node_modules/sketch-module-web-view/lib/index.js");
 
-var sketch = __webpack_require__(/*! sketch */ "sketch");
+var sketch = __webpack_require__(/*! sketch */ "sketch"); // eslint-disable-line
 
-var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui");
+
+var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui"); // eslint-disable-line
+
 
 /* harmony default export */ __webpack_exports__["default"] = (function (context) {
   var options = {
@@ -2301,20 +2303,23 @@ var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui");
     page.layers.map(function (l) {
       console.log("Symbol name is: ".concat(l.name, " with id ").concat(l.symbolId));
       log("Symbol name is: ".concat(l.name, " with id ").concat(l.symbolId));
+      return l;
     });
   }; // add a handler for a call from web content's javascript
+  // webContents.on('nativeLog', s => {
+  //   UI.message(s)
+  //   webContents
+  //     .executeJavaScript(`setRandomNumber(${Math.random()})`)
+  //     .catch(console.error)
+  // })
 
 
-  webContents.on('nativeLog', function (s) {
-    UI.message(s);
-    webContents.executeJavaScript("setRandomNumber(".concat(Math.random(), ")")).catch(console.error);
-  });
   webContents.on('symbolsLog', function (s) {
     UI.message(s);
     getSymbolsInfo(symbolsPage);
     webContents.executeJavaScript("getSymbols()").catch(console.error);
   });
-  browserWindow.loadURL(__webpack_require__(/*! ../resources/webview.html */ "./resources/webview.html"));
+  browserWindow.loadURL(__webpack_require__(/*! ../resources/webview.html */ "./resources/webview.html")); // eslint-disable-line
 });
 
 /***/ }),
