@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./resources/webview.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./resources/app/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -26861,25 +26861,7 @@ var _app = __webpack_require__(/*! ./components/app */ "./resources/app/componen
 /* globals document */
 _reactDom.default.render(_react.default.createElement(_app.default, null), document.getElementById('root'));
 
-/***/ }),
-
-/***/ "./resources/webview.js":
-/*!******************************!*\
-  !*** ./resources/webview.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(/*! ./app */ "./resources/app/index.js");
-
-/* globals document */
-// Disable the context menu to have a more native feel
-if (false) {}
-
 /***/ })
 
 /******/ });
-//# sourceMappingURL=webview.js.map
+//# sourceMappingURL=index.js.map

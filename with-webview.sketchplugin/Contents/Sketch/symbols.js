@@ -2250,7 +2250,7 @@ module.exports = function buildAPI(browserWindow, panel, webview) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/ac9c98bfbaea4ed8263568b1e53a1f2d.html").path();
+module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/00d8f153d361f481440a4d92886bbd8c.html").path();
 
 /***/ }),
 
@@ -2263,19 +2263,30 @@ module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resour
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var BrowserWindow = __webpack_require__(/*! sketch-module-web-view */ "./node_modules/sketch-module-web-view/lib/index.js");
+/* globals AppController, NSWorkspace */
 
+/* eslint-disable global-require */
 var sketch = __webpack_require__(/*! sketch */ "sketch"); // eslint-disable-line
 
 
 var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui"); // eslint-disable-line
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function (context) {
+var BrowserWindow = __webpack_require__(/*! sketch-module-web-view */ "./node_modules/sketch-module-web-view/lib/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
   var options = {
-    identifier: 'unique.id',
-    width: 640,
-    height: 480,
+    identifier: 'symbols.manager',
+    width: 830,
+    height: 400,
+    minWidth: 700,
+    minHeight: 300,
+    minimizable: false,
+    maximizable: false,
+    fullscreenable: false,
+    acceptFirstMouse: true,
+    title: 'Sketch DevTools',
+    resizable: true,
     show: false
   };
   var browserWindow = new BrowserWindow(options); // only show the window when the page has loaded
@@ -2287,39 +2298,34 @@ var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui"); // eslint-disable-li
 
   webContents.on('did-finish-load', function () {
     UI.message('UI loaded!');
-  });
-  var document = sketch.fromNative(context.document);
-  var pages = document.pages;
-  var symbolsPage = pages.find(function (p) {
-    return p.name === 'Symbols';
-  });
-
-  var getSymbolsInfo = function getSymbolsInfo(page) {
-    if (!page) {
-      console.log('No symbols page found');
-      log('No symbols page found');
-    }
-
-    page.layers.map(function (l) {
-      console.log("Symbol name is: ".concat(l.name, " with id ").concat(l.symbolId));
-      log("Symbol name is: ".concat(l.name, " with id ").concat(l.symbolId));
-      return l;
-    });
-  }; // add a handler for a call from web content's javascript
+  }); // const document = sketch.fromNative(context.document)
+  // const { pages } = document
+  // const symbolsPage = pages.find(p => p.name === 'Symbols')
+  // const getSymbolsInfo = page => {
+  //   if (!page) {
+  //     console.log('No symbols page found')
+  //     log('No symbols page found')
+  //   }
+  //   page.layers.map(l => {
+  //     console.log(`Symbol name is: ${l.name} with id ${l.symbolId}`)
+  //     log(`Symbol name is: ${l.name} with id ${l.symbolId}`)
+  //     return l
+  //   })
+  // }
+  // add a handler for a call from web content's javascript
   // webContents.on('nativeLog', s => {
   //   UI.message(s)
   //   webContents
   //     .executeJavaScript(`setRandomNumber(${Math.random()})`)
   //     .catch(console.error)
   // })
+  // webContents.on('symbolsLog', s => {
+  //   UI.message(s)
+  //   getSymbolsInfo(symbolsPage)
+  //   webContents.executeJavaScript(`getSymbols()`).catch(console.error)
+  // })
 
-
-  webContents.on('symbolsLog', function (s) {
-    UI.message(s);
-    getSymbolsInfo(symbolsPage);
-    webContents.executeJavaScript("getSymbols()").catch(console.error);
-  });
-  browserWindow.loadURL(__webpack_require__(/*! ../resources/webview.html */ "./resources/webview.html")); // eslint-disable-line
+  browserWindow.loadURL(__webpack_require__(/*! ../resources/webview.html */ "./resources/webview.html"));
 });
 
 /***/ }),
