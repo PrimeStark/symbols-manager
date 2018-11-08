@@ -1,0 +1,19 @@
+---
+root: true
+extends:
+  - airbnb
+  - plugin:import/errors
+  - prettier
+plugins:
+  - no-not-accumulator-reassign
+  - prettier
+env:
+    node: true
+rules:
+  no-param-reassign: 0
+  no-not-accumulator-reassign/no-not-accumulator-reassign: [2, ['reduce'], {props: true}]
+  import/no-extraneous-dependencies: 0
+  jsx-a11y/accessible-emoji: 0
+  no-underscore-dangle: 0
+  react/no-array-index-key: 0
+  react/require-default-props: 0

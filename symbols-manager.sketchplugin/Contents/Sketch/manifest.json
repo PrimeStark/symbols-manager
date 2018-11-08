@@ -7,13 +7,13 @@
       "name": "STRV Symbols",
       "description": "Manage your symbols",
       "identifier": "symbols",
-      "script": "./show-debugger.js",
+      "script": "show-debugger.js",
       "shortcut": "ctrl alt y"
     },
     {
       "name": "Catch all actions",
       "identifier": "skpm.dev-tools.catch-all-actions",
-      "script": "./catch-all-actions.js",
+      "script": "catch-all-actions.js",
       "handlers": {
         "actions": {
           "*": "onAction"
@@ -23,11 +23,19 @@
     {
       "name": "test log",
       "identifier": "skpm.dev-tools.test-log",
-      "script": "./test-log.js"
+      "script": "test-log.js"
     }
   ],
   "menu": {
     "isRoot": true,
-    "items": ["symbols"]
-  }
+    "items": [
+      "symbols"
+    ]
+  },
+  "version": "0.1.0",
+  "description": "Manage all your symbols in more efficient way",
+  "name": "symbols-manager",
+  "identifier": "symbols-manager",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com/PrimeStark/symbols-manager/master/.appcast.xml"
 }
