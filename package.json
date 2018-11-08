@@ -30,7 +30,8 @@
     "lint-staged": "lint-staged",
     "lint": "eslint --ignore-path=.gitignore .",
     "prettier:base": "prettier --write",
-    "prettify": "npm run prettier:base \"./src/**/*.{js,jsx}\" \"./resources/**/*.{js,jsx}\""
+    "prettify": "npm run prettier:base \"./src/**/*.{js,jsx}\" \"./resources/**/*.{js,jsx}\"",
+    "zombies": "delete-react-zombies"
   },
   "devDependencies": {
     "@babel/standalone": "^7.1.0",
@@ -71,6 +72,7 @@
     "redux-logger": "^3.0.6"
   },
   "dependencies": {
+    "delete-react-zombies": "0.0.3",
     "sketch-module-web-view": "^2.0.1",
     "sketch-utils": "^0.2.8"
   },

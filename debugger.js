@@ -1,7 +1,7 @@
 /* eslint-disable no-var, prefer-template, prefer-arrow-callback, prefer-destructuring, object-shorthand */
 var remoteWebview = require('sketch-module-web-view/remote')
 
-module.exports.identifier = 'skpm.debugger'
+module.exports.identifier = 'symbols'
 
 module.exports.isDebuggerPresent = remoteWebview.isWebviewPresent.bind(
   this,

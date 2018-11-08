@@ -29,13 +29,13 @@ export default function() {
 
   const browserWindow = new BrowserWindow({
     identifier,
-    width: 830,
-    height: 400,
+    width: 1024,
+    height: 640,
     minWidth: 700,
     minHeight: 300,
     minimizable: false,
     maximizable: false,
-    alwaysOnTop: Settings.settingForKey('alwaysOnTop') || false,
+    alwaysOnTop: Settings.settingForKey('alwaysOnTop') || true,
     fullscreenable: false,
     acceptFirstMouse: true,
     title: 'Sketch DevTools',

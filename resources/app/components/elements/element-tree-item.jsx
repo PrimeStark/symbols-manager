@@ -76,7 +76,8 @@ export default class ElementTreeItem extends Component {
       >
         &lt;
         <CompleteElementName element={this.props.element} />
-        {expanded ? '>' : ' />'}{' '}
+        {expanded ? '>' : ' />'}
+{' '}
         {this.state.quickLook && <QuickLook element={this.props.element} />}
       </WrapElement>
     )
@@ -84,6 +85,7 @@ export default class ElementTreeItem extends Component {
 
   renderElement() {
     const { element } = this.props
+    console.log(element)
 
     if (element && element.children && element.children.length > 0) {
       return (

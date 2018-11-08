@@ -11,24 +11,12 @@ import getTheme from '../theme'
 
 const tabs = [
   {
-    url: '/console',
-    label: 'Console',
-  },
-  {
     url: '/elements',
     label: 'Elements',
   },
   {
-    url: '/playground',
-    label: 'Playground',
-  },
-  {
-    url: '/network',
-    label: 'Network',
-  },
-  {
-    url: '/actions',
-    label: 'Actions',
+    url: '/console',
+    label: 'Console',
   },
 ]
 
