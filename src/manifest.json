@@ -19,11 +19,6 @@
           "*": "onAction"
         }
       }
-    },
-    {
-      "name": "test log",
-      "identifier": "skpm.dev-tools.test-log",
-      "script": "./test-log.js"
     }
   ],
   "menu": {
