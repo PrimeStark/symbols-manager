@@ -1,0 +1,15 @@
+{
+  "name": "symbols-manager-embeded",
+  "private": true,
+  "version": "0.2.0",
+  "description": "",
+  "main": "build-script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@skpm/builder": "^0.5.10"
+  }
+}

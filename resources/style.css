@@ -9,21 +9,15 @@ html {
 
   /* Force the default cursor, even on text */
   cursor: default;
-}
 
-/* Some general styling for dev purposes */
-/* TODO: remove when doing some real styling */
-body {
-  margin: 16px;
-}
-button {
-  margin: 16px 0 16px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   position: relative;
@@ -33,8 +27,13 @@ button {
   user-select: none;
 }
 
-input,
-textarea {
-  -webkit-user-select: auto;
-  user-select: auto;
+html,
+body,
+#root {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
 }

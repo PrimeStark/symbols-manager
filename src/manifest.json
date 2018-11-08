@@ -1,16 +1,28 @@
 {
-  "compatibleVersion": 3,
+  "compatibleVersion": 50,
   "bundleVersion": 1,
+  "icon": "icon.png",
   "commands": [
     {
-      "name": "Symbols",
-      "identifier": "symbols-identifier",
-      "script": "./symbols.js",
-      "shortcut": "ctrl alt q"
+      "name": "STRV Symbols",
+      "description": "Manage your symbols",
+      "identifier": "symbols",
+      "script": "./show-debugger.js",
+      "shortcut": "ctrl alt y"
+    },
+    {
+      "name": "Catch all actions",
+      "identifier": "catch-all-actions",
+      "script": "./catch-all-actions.js",
+      "handlers": {
+        "actions": {
+          "*": "onAction"
+        }
+      }
     }
   ],
   "menu": {
-    "title": "STRV Symbols",
-    "items": ["symbols-identifier"]
+    "isRoot": true,
+    "items": ["symbols"]
   }
 }
