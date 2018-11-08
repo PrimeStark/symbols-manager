@@ -77,9 +77,6 @@
   "resources": [
     "resources/webview.js"
   ],
-  "pre-commit": [
-    "lint-staged"
-  ],
   "lint-staged": {
     "*.js": [
       "npm run prettier:base",
