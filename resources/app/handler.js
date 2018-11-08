@@ -5,8 +5,6 @@ import {
   SET_TREE,
   SET_PAGE_METADATA,
   SET_LAYER_METADATA,
-  ADD_REQUEST,
-  SET_RESPONSE,
   ADD_ACTION,
   GROUP,
   GROUP_END,
@@ -19,7 +17,6 @@ import {
   setLayerMetadata,
   setPageMetadata,
 } from './redux/ducks/elements'
-import { addRequest, setResponse } from './redux/ducks/network'
 import { setScriptResult } from './redux/ducks/playground'
 
 export default function(dispatch) {
@@ -40,10 +37,6 @@ export default function(dispatch) {
         return dispatch(setPageMetadata(jsonData.payload))
       case SET_LAYER_METADATA:
         return dispatch(setLayerMetadata(jsonData.payload))
-      case ADD_REQUEST:
-        return dispatch(addRequest(jsonData.payload))
-      case SET_RESPONSE:
-        return dispatch(setResponse(jsonData.payload))
       case ADD_ACTION:
         return dispatch(addAction(jsonData.payload))
       case GROUP:

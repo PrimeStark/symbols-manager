@@ -4,7 +4,6 @@ import { combineReducers } from 'redux'
 import actions from './actions'
 import logs from './logs'
 import elements from './elements'
-import network from './network'
 import playground from './playground'
 import settings from './settings'
 
@@ -13,6 +12,5 @@ export default combineReducers({
   logs,
   elements,
   playground,
-  network,
   settings,
 })

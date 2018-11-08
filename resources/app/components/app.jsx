@@ -14,10 +14,6 @@ const tabs = [
     url: '/elements',
     label: 'Elements',
   },
-  {
-    url: '/console',
-    label: 'Console',
-  },
 ]
 
 const Container = styled.div`
