@@ -1,5 +1,5 @@
 # build artefacts
-dev-tools.sketchplugin
+symbols-manager.sketchplugin
 
 # npm
 node_modules

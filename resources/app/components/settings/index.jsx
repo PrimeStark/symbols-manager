@@ -96,7 +96,7 @@ const Settings = ({ settings, dispatch }) => (
       </SettingRow>
       <SettingRow>
         <Note>
-          Always show the devtools on top of Sketch, even when not focused.
+          Always show the window on top of Sketch, even when not focused.
         </Note>
         <CheckBoxWrapper>
           <label htmlFor="always_on_top">

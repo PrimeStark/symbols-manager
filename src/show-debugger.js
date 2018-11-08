@@ -21,7 +21,7 @@ export default function() {
   const existingWebview = getWebview(identifier)
   if (existingWebview) {
     if (existingWebview.isVisible()) {
-      // close the devtool if it's open
+      // close the window if it's open
       existingWebview.close()
     }
     return
@@ -38,7 +38,7 @@ export default function() {
     alwaysOnTop: Settings.settingForKey('alwaysOnTop') || true,
     fullscreenable: false,
     acceptFirstMouse: true,
-    title: 'Sketch DevTools',
+    title: 'Symbols Manager',
     resizable: true,
     show: false,
   })

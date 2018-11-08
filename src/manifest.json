@@ -12,7 +12,7 @@
     },
     {
       "name": "Catch all actions",
-      "identifier": "skpm.dev-tools.catch-all-actions",
+      "identifier": "catch-all-actions",
       "script": "./catch-all-actions.js",
       "handlers": {
         "actions": {
